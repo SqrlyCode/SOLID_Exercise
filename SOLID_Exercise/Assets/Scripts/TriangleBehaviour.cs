@@ -17,6 +17,7 @@ public class TriangleBehaviour : MonoBehaviour, IShapeBehaviour
         Vector2 shootOrigin = (Vector2)transform.position + (Vector2)transform.up * 0.5f;
         GameObject newProjectileGo = Instantiate(_projectileGo, shootOrigin, Quaternion.identity);
         newProjectileGo.transform.up = position - (Vector2)transform.position;
+        newProjectileGo.GetComponent<TriangleProjectile>().Init(this);
     }
 
     public Vector2 _Position => transform.position;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5463413395873475546}
   - component: {fileID: 3115928323167538718}
   - component: {fileID: 2391481907314036073}
+  - component: {fileID: 501758683957987250}
   m_Layer: 7
   m_Name: ShapeUI - Canvas
   m_TagString: Untagged
@@ -101,6 +102,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &501758683957987250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234772752099635432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b9516126961264eaf4d88dd0a4038b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yOffset: 0.65
 --- !u!1001 &3297541609850906810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5268397061505165129, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 357.8
+      value: 160.9
       objectReference: {fileID: 0}
     - target: {fileID: 5268397061505165129, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
       propertyPath: m_SizeDelta.y

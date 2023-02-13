@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor.U2D.Path;
 using UnityEngine;
 
-public class TriangleProjectile : MonoBehaviour
+public class TriangleProjectile : MonoBehaviour, IProjectile
 {
     [SerializeField] private float _moveSpeed = 8f;
     [SerializeField] private float _rotationSpeed = 90; //In Degrees per second
@@ -10,9 +12,17 @@ public class TriangleProjectile : MonoBehaviour
     [SerializeField] private LayerMask _targetLayerMask;
     [SerializeField] private int _damage = 10;
     
+    public int _Damage => _damage;
+    public IShapeBehaviour _Creator { get; private set; }
+    
 
     private Rigidbody2D _rb;
 
+    public void Init(IShapeBehaviour creator)
+    {
+        _Creator = creator;
+    }
+    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -37,7 +47,9 @@ public class TriangleProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         ShapeMotor shape = col.GetComponent<ShapeMotor>();
-        if (shape != null)
+        IShapeBehaviour shapeBehaviour = col.GetComponent<IShapeBehaviour>();
+        //If ShapeMotor is on Object and Shapebehavior is something else than the Type that fired. i.e. triangles can not hit other triangles
+        if (shape != null && shapeBehaviour.GetType() !=  _Creator.GetType())
         {
             shape._Health -= _damage;
             Destroy(gameObject);

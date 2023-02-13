@@ -1111,5 +1111,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8960916436508379819, guid: 9a328de963ae73740a370ba1e1e5c8c7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960916436508379819, guid: 9a328de963ae73740a370ba1e1e5c8c7, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960916436508379819, guid: 9a328de963ae73740a370ba1e1e5c8c7, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a328de963ae73740a370ba1e1e5c8c7, type: 3}

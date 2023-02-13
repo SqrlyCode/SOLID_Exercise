@@ -1,8 +1,4 @@
-using System;
-using UnityEditor.U2D.Path;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
-using UnityEngine.Serialization;
 
 public class ShapeMotor : MonoBehaviour
 {
@@ -20,6 +16,8 @@ public class ShapeMotor : MonoBehaviour
         {
             _health = (int)Mathf.Clamp(value, 0, 100);
             _healthBar._desiredValue = value / (float)_maxHealth;
+            if(_health <= 0)
+                Destroy(gameObject);
         }
     }
 
@@ -37,7 +35,7 @@ public class ShapeMotor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.MovePosition(_rb.position + _MoveInput * (Time.deltaTime * _moveSpeed));
+        _rb.velocity = _MoveInput * (Time.deltaTime * _moveSpeed);
     }
 
 

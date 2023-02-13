@@ -152,8 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _rotationSpeed: 15
+  _rotationSpeed: 30
   _targettingRange: 5
   _targetLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  _damage: 10
