@@ -1,12 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TriangleProjectile : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 8f;
-    [SerializeField] private float _rotationSpeed = 90;//In Degrees per second
+    [SerializeField] private float _rotationSpeed = 90; //In Degrees per second
     [SerializeField] private float _targettingRange = 5f;
     [SerializeField] private LayerMask _targetLayerMask;
+    [SerializeField] private int _damage = 10;
     
 
     private Rigidbody2D _rb;
@@ -24,12 +26,22 @@ public class TriangleProjectile : MonoBehaviour
         {
             Vector2 dirToTarget = closestTarget._Position - (Vector2)transform.position;
             float angleToTarget = Vector2.Angle(transform.up, dirToTarget);
-            Vector2 newDir = Vector2.Lerp(transform.up, dirToTarget, Time.deltaTime * _rotationSpeed/angleToTarget);
+            Vector2 newDir = Vector2.Lerp(transform.up, dirToTarget, Time.deltaTime * _rotationSpeed / angleToTarget);
             transform.up = newDir;
         }
 
         //Move to target
         _rb.MovePosition((Vector2)transform.position + (Vector2)transform.up * (Time.deltaTime * _moveSpeed));
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        ShapeMotor shape = col.GetComponent<ShapeMotor>();
+        if (shape != null)
+        {
+            shape._Health -= _damage;
+            Destroy(gameObject);
+        }
     }
 
     IShapeBehaviour GetClosestTarget(float range, LayerMask layerMask)
@@ -49,7 +61,7 @@ public class TriangleProjectile : MonoBehaviour
 
         if (shapesInRange.Count == 0)
             return null;
-        
+
         IShapeBehaviour closestShape = shapesInRange[0];
         foreach (var shape in shapesInRange)
         {
@@ -59,4 +71,5 @@ public class TriangleProjectile : MonoBehaviour
 
         return closestShape;
     }
+
 }
