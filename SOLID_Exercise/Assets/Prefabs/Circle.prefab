@@ -254,6 +254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxAmountOfProjectiles: 8
-  _projectileSpawnCooldown: 2
+  _projectileSpawnCooldown: 1.5
   _projectilePrefab: {fileID: 9059136150942618562, guid: 7779464c5bad050488043e5daa43f696, type: 3}
   _projectileRotationSpeed: 60
