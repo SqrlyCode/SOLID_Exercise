@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5463413395873475546}
   - component: {fileID: 3115928323167538718}
   - component: {fileID: 2391481907314036073}
-  - component: {fileID: 501758683957987250}
   m_Layer: 7
   m_Name: ShapeUI - Canvas
   m_TagString: Untagged
@@ -29,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 6234772752099635432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0041501503, y: 0.0041501503, z: 0.0041501503}
+  m_LocalScale: {x: 0.0011788502, y: 0.0011788502, z: 0.0011788502}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7268286060155736051}
@@ -102,19 +101,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &501758683957987250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6234772752099635432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b9516126961264eaf4d88dd0a4038b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _yOffset: 0.65
 --- !u!1001 &3297541609850906810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,6 +108,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1191888494206053939}
     m_Modifications:
+    - target: {fileID: 5268397060639431173, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268397060639431173, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268397060639431173, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5268397061505165129, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -152,11 +150,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5268397061505165129, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160.9
+      value: 169.2
       objectReference: {fileID: 0}
     - target: {fileID: 5268397061505165129, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 43.2
+      value: 177.3
       objectReference: {fileID: 0}
     - target: {fileID: 5268397061505165129, guid: 0363e722d0fe6e946b658326f27a4f33, type: 3}
       propertyPath: m_LocalPosition.x

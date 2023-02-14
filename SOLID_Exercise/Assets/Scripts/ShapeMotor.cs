@@ -6,7 +6,7 @@ public class ShapeMotor : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5;
     [SerializeField] private int _maxHealth = 100;
     private int _health;
-    [SerializeField] private HealthBar _healthBar;
+    [SerializeField] private ShapeHpDisplay _healthBar;
 
     public Vector2 _MoveInput { get; set; }
 
@@ -16,11 +16,12 @@ public class ShapeMotor : MonoBehaviour
         set
         {
             _health = (int)Mathf.Clamp(value, 0, 100);
-            _healthBar._desiredValue = value / (float)_maxHealth;
             if (_health <= 0)
             {
                 Die();
             }
+            else
+                _healthBar._desiredValue = value / (float)_maxHealth;
         }
     }
 
@@ -49,10 +50,8 @@ public class ShapeMotor : MonoBehaviour
 
     private void Die()
     {
-        _healthBar.SetVisible(false);
         transform.DOScale(Vector3.zero, 0.1f)
             .SetEase(Ease.OutSine)
             .OnComplete(() => Destroy(gameObject));
     }
-
 }
