@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class ShapeMotor : MonoBehaviour
 {
@@ -16,8 +17,10 @@ public class ShapeMotor : MonoBehaviour
         {
             _health = (int)Mathf.Clamp(value, 0, 100);
             _healthBar._desiredValue = value / (float)_maxHealth;
-            if(_health <= 0)
-                Destroy(gameObject);
+            if (_health <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -38,10 +41,18 @@ public class ShapeMotor : MonoBehaviour
         _rb.velocity = _MoveInput * (Time.deltaTime * _moveSpeed);
     }
 
-
     public void LookAtPosition(Vector2 position)
     {
         Vector2 dir = position - _rb.position;
         transform.up = dir;
     }
+
+    private void Die()
+    {
+        _healthBar.SetVisible(false);
+        transform.DOScale(Vector3.zero, 0.1f)
+            .SetEase(Ease.OutSine)
+            .OnComplete(() => Destroy(gameObject));
+    }
+
 }

@@ -22,8 +22,13 @@ public class HealthBar : MonoBehaviour
         _img.color = Color.Lerp(_img.color, _desiredColor, Time.fixedDeltaTime / _changeDrag);;
         UpdateDesiredColor();
     }
+
+    public void SetVisible(bool isVisible)
+    {
+        gameObject.SetActive(isVisible);
+    }
     
-    void UpdateDesiredColor()
+    private void UpdateDesiredColor()
     {
         _desiredColor = Color.white;
         if (_desiredValue >= 0.5f)

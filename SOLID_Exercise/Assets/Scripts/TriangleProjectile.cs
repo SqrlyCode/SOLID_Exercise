@@ -48,8 +48,14 @@ public class TriangleProjectile : MonoBehaviour, IProjectile
     {
         ShapeMotor shape = col.GetComponent<ShapeMotor>();
         IShapeBehaviour shapeBehaviour = col.GetComponent<IShapeBehaviour>();
+        
+        if(shapeBehaviour == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         //If ShapeMotor is on Object and Shapebehavior is something else than the Type that fired. i.e. triangles can not hit other triangles
-        if (shape != null && shapeBehaviour.GetType() !=  _Creator.GetType())
+        if (shapeBehaviour.GetType() !=  _Creator.GetType())
         {
             shape._Health -= _damage;
             Destroy(gameObject);
