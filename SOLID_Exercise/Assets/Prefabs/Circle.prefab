@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 150
   _maxHealth: 100
+  _lookAtCursor: 0
   _healthBar: {fileID: 7127342246822953882}
 --- !u!114 &7553949090400711978
 MonoBehaviour:
@@ -252,3 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d738c4cd003684ba0a14468590959f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxAmountOfProjectiles: 8
+  _projectileSpawnCooldown: 2
+  _projectilePrefab: {fileID: 9059136150942618562, guid: 7779464c5bad050488043e5daa43f696, type: 3}
+  _projectileRotationSpeed: 60
