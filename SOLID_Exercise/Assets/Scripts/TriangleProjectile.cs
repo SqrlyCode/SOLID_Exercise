@@ -28,7 +28,7 @@ public class TriangleProjectile : MonoBehaviour, IProjectile
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         //Rotate to target
         IShapeBehaviour closestTarget = GetClosestTarget(_targettingRange, _targetLayerMask);
@@ -41,25 +41,27 @@ public class TriangleProjectile : MonoBehaviour, IProjectile
         }
 
         //Move to target
-        _rb.MovePosition((Vector2)transform.position + (Vector2)transform.up * (Time.deltaTime * _moveSpeed));
+        transform.position = (Vector2)transform.position + (Vector2)transform.up * (Time.deltaTime * _moveSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        ShapeMotor shape = col.GetComponent<ShapeMotor>();
+        ShapeMotor shapeMotor = col.GetComponent<ShapeMotor>();
         IShapeBehaviour shapeBehaviour = col.GetComponent<IShapeBehaviour>();
-        
-        if(shapeBehaviour == null)
+        IProjectile projectile = col.GetComponent<IProjectile>();
+
+        if (projectile!= null && projectile.GetType() != this.GetType())
         {
             Destroy(gameObject);
-            return;
         }
         //If ShapeMotor is on Object and Shapebehavior is something else than the Type that fired. i.e. triangles can not hit other triangles
-        if (shapeBehaviour.GetType() !=  _Creator.GetType())
+        else if (shapeBehaviour != null && shapeBehaviour.GetType() !=  _Creator.GetType())
         {
-            shape._Health -= _damage;
+            shapeMotor._Health -= _Damage;
             Destroy(gameObject);
         }
+        else if(col.CompareTag("Wall"))
+            Destroy(gameObject);
     }
 
     IShapeBehaviour GetClosestTarget(float range, LayerMask layerMask)

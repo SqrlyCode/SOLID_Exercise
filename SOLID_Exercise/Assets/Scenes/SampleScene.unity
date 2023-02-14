@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 378625262}
   m_Layer: 6
   m_Name: RightWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,8 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0adece08b0c3294bada1751527b55e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followSpeed: 1
-  _followTarget: {fileID: 1850658594}
+  _followTarget: {fileID: 806694160}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +748,7 @@ GameObject:
   - component: {fileID: 720798983}
   m_Layer: 6
   m_Name: TopWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,7 +859,7 @@ GameObject:
   - component: {fileID: 802156934}
   m_Layer: 6
   m_Name: LeftWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -958,6 +957,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &806694160 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7553949090400711981, guid: d7b260ab4cde5a747996ee60c4cda077, type: 3}
+  m_PrefabInstance: {fileID: 7553949089039827423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1008791829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1043,7 @@ GameObject:
   - component: {fileID: 1274277873}
   m_Layer: 6
   m_Name: BotWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1278,6 +1282,7 @@ MonoBehaviour:
   - {fileID: 2921175782434424076, guid: d86c3fdcb6a2fed4db6df29689dfea91, type: 3}
   - {fileID: 7553949090400711983, guid: d7b260ab4cde5a747996ee60c4cda077, type: 3}
   - {fileID: 8960916436508379798, guid: 9a328de963ae73740a370ba1e1e5c8c7, type: 3}
+  _spawnOtherShapes: 0
 --- !u!4 &1713272263
 Transform:
   m_ObjectHideFlags: 0
@@ -1347,13 +1352,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1850658594 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2921175782434424074, guid: d86c3fdcb6a2fed4db6df29689dfea91, type: 3}
-  m_PrefabInstance: {fileID: 2921175782889819998}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2921175782889819998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1363,15 +1363,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2921175782434424074, guid: d86c3fdcb6a2fed4db6df29689dfea91, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2921175782434424074, guid: d86c3fdcb6a2fed4db6df29689dfea91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.63
       objectReference: {fileID: 0}
     - target: {fileID: 2921175782434424074, guid: d86c3fdcb6a2fed4db6df29689dfea91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 2921175782434424074, guid: d86c3fdcb6a2fed4db6df29689dfea91, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1418,9 +1418,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7553949090400711978, guid: d7b260ab4cde5a747996ee60c4cda077, type: 3}
+      propertyPath: _projectileSpawnCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7553949090400711981, guid: d7b260ab4cde5a747996ee60c4cda077, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7553949090400711981, guid: d7b260ab4cde5a747996ee60c4cda077, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1481,7 +1485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960916436508379816, guid: 9a328de963ae73740a370ba1e1e5c8c7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8960916436508379816, guid: 9a328de963ae73740a370ba1e1e5c8c7, type: 3}
       propertyPath: m_LocalPosition.x

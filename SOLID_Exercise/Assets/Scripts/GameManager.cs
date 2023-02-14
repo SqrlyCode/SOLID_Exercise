@@ -8,12 +8,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _amountOfShapesToSpawn = 10;
     [SerializeField] private Rect _spawnArea;
     [SerializeField] private GameObject[] _shapePrefabs;
+    [SerializeField] private bool _spawnOtherShapes = true;
     
     
     void Start()
     {
-        for (int i = 0; i < _amountOfShapesToSpawn; i++)
-            SpawnShape();
+        if (_spawnOtherShapes)
+        {
+            for (int i = 0; i < _amountOfShapesToSpawn; i++)
+                SpawnShape();
+        }
     }
 
     private void SpawnShape()
