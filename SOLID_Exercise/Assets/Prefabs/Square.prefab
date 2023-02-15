@@ -247,8 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3efeba496b574d9ab47148c54655548f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 150
   _maxHealth: 100
+  _lookAtCursor: 0
   _healthBar: {fileID: 7100111914174760738}
 --- !u!114 &8960916436508379821
 MonoBehaviour:
@@ -262,3 +263,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132f4e29fa1db584bbfffc1e8f8527a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 9059136150942618562, guid: 58f9e9db18a81014bbfcc8142e6b0dad, type: 3}
+  _projectileRespawnCooldown: 1

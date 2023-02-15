@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 788609109021125226}
   - component: {fileID: 8852831184408780688}
   - component: {fileID: 6108897567339814192}
-  - component: {fileID: 8860153306212201486}
   - component: {fileID: 6916551590845268878}
+  - component: {fileID: 8860153306212201486}
   m_Layer: 0
   m_Name: Projectile_Triangle
   m_TagString: Untagged
@@ -118,25 +118,6 @@ PolygonCollider2D:
       - {x: 0, y: 0.49023438}
       - {x: -0.005859375, y: 0.48828125}
       - {x: -0.49023438, y: -0.48242188}
---- !u!114 &8860153306212201486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234489853790750363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e720ff21a0e684f84b491cace5c92f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: 5
-  _rotationSpeed: 30
-  _targettingRange: 5
-  _targetLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _damage: 10
 --- !u!50 &6916551590845268878
 Rigidbody2D:
   serializedVersion: 4
@@ -158,3 +139,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8860153306212201486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234489853790750363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e720ff21a0e684f84b491cace5c92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5
+  _rotationSpeed: 30
+  _targettingRange: 5
+  _targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _damage: 10
