@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 8960916436508379819}
   - component: {fileID: 4870427663495341395}
   - component: {fileID: 8960916436508379821}
+  - component: {fileID: -1191190416768762431}
   m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
@@ -264,4 +265,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectilePrefab: {fileID: 9059136150942618562, guid: 58f9e9db18a81014bbfcc8142e6b0dad, type: 3}
-  _projectileRespawnCooldown: 1
+  _projectileRespawnCooldown: 3
+--- !u!114 &-1191190416768762431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8960916436508379798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff39fc0aac10dd94db41dd20ece05c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

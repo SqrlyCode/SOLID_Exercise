@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 7553949090400711980}
   - component: {fileID: 6690605490468577919}
   - component: {fileID: 7553949090400711978}
+  - component: {fileID: 2029285655}
   m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
@@ -254,6 +255,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxAmountOfProjectiles: 8
-  _projectileSpawnCooldown: 1.5
+  _projectileSpawnCooldown: 1
   _projectilePrefab: {fileID: 9059136150942618562, guid: 7779464c5bad050488043e5daa43f696, type: 3}
   _projectileRotationSpeed: 60
+--- !u!114 &2029285655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553949090400711983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff39fc0aac10dd94db41dd20ece05c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

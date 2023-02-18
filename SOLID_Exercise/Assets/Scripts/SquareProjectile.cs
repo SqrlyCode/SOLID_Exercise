@@ -30,6 +30,7 @@ public class SquareProjectile : MonoBehaviour, IProjectile
     {
         _State = SquareProjectileState.Idle;
         _Creator = creator;
+        
         Vector3 initScale = transform.localScale;
         transform.localScale = Vector3.zero;
         transform.DOScale(initScale, 0.2f);
@@ -114,10 +115,14 @@ public class SquareProjectile : MonoBehaviour, IProjectile
         _originPosition = originPos;
     }
 
-    private void Die()
+    public void Die()
     {
         DOTween.Kill(transform);
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
         destroyed?.Invoke(this);
     }
 }

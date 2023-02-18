@@ -10,6 +10,7 @@ public class SquareBehaviour : MonoBehaviour, IShapeBehaviour
 
     private float[] _projectileRespawnTimer;
     private List<SquareProjectile> _projectiles;//0:top, 1:right, 2:bot, 3:left 
+    private ShapeMotor _shapeMotor;
     
     public Vector2 _Position => transform.position;
 
@@ -18,11 +19,13 @@ public class SquareBehaviour : MonoBehaviour, IShapeBehaviour
         _projectileRespawnTimer = new float[4];
         _projectiles = new List<SquareProjectile> {null,null,null,null};
         _projectiles.Capacity = 4;
+        _shapeMotor = GetComponent<ShapeMotor>();
+        _shapeMotor.died += ShapeMotor_Died;
         for (int i = 0; i < 4; i++)
         {
             SpawnProjectile(i);
         }
-
+    
     }
 
     private void Update()
@@ -71,5 +74,14 @@ public class SquareBehaviour : MonoBehaviour, IShapeBehaviour
     {
         int index = _projectiles.IndexOf(projectile);
         _projectiles[index] = null;
+    }
+    
+    private void ShapeMotor_Died()
+    {
+        for (int i=0; i< _projectiles.Count; i++)
+        {
+            if(_projectiles[i] != null)
+                _projectiles[i].Die();
+        }
     }
 }

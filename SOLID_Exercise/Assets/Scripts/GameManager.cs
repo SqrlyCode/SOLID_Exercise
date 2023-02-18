@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
     private void SpawnShape()
     {
         Vector2 rndPos = new Vector2(Random.Range(-_spawnArea.width/2, _spawnArea.width/2), Random.Range(-_spawnArea.height/2, _spawnArea.height/2));

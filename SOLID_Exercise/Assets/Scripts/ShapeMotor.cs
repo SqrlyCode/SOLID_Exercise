@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 
 public class ShapeMotor : MonoBehaviour
 {
+    public event Action died;
+
     [SerializeField] private float _moveSpeed = 5;
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private bool _lookAtCursor;
@@ -56,6 +59,7 @@ public class ShapeMotor : MonoBehaviour
 
     private void Die()
     {
+        died?.Invoke();
         transform.DOScale(Vector3.zero, 0.1f)
             .SetEase(Ease.OutSine)
             .OnComplete(() => Destroy(gameObject));

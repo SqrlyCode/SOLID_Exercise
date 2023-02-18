@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform _followTarget;
+    [SerializeField] private PlayerController _playerController;
 
     void Update()
     {
-        Vector3 newPos = _followTarget.position;
-        newPos.z = transform.position.z;
+        if (_playerController != null)
+        {
+            Vector3 newPos = _playerController._controlledShapeMotor.transform.position;
+            newPos.z = transform.position.z;
 
-        transform.position = newPos;
+            transform.position = newPos;
+        }
     }
 }

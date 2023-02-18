@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 2921175782434424073}
   - component: {fileID: 2921175782434424072}
   - component: {fileID: 2921175782434424075}
+  - component: {fileID: 9033053414982539395}
   m_Layer: 7
   m_Name: Triangle
   m_TagString: Untagged
@@ -254,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 150
   _maxHealth: 100
-  _lookAtCursor: 0
+  _lookAtCursor: 1
   _healthBar: {fileID: 1102666331760342512}
 --- !u!114 &2921175782434424075
 MonoBehaviour:
@@ -269,4 +270,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileGo: {fileID: 2234489853790750363, guid: f954f43073f99a94ba9bffad6225b131, type: 3}
-  _shootCooldown: 0.3
+  _shootCooldown: 0.5
+--- !u!114 &9033053414982539395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2921175782434424076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff39fc0aac10dd94db41dd20ece05c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
