@@ -45,7 +45,7 @@ public class CircleProjectile : MonoBehaviour, IProjectile
             Die();
     }
 
-    private void Die()
+    public void Die()
     {
         Destroy(gameObject);
         destroyed?.Invoke(this);

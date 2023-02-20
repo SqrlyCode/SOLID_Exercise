@@ -14,7 +14,6 @@ public class TriangleProjectile : MonoBehaviour, IProjectile
     
     public int _Damage => _damage;
     public IShapeBehaviour _Creator { get; private set; }
-    
 
     private Rigidbody2D _rb;
 
@@ -44,8 +43,9 @@ public class TriangleProjectile : MonoBehaviour, IProjectile
         transform.position = (Vector2)transform.position + (Vector2)transform.up * (Time.deltaTime * _moveSpeed);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
+        this.DefaultTriggerBehaviour(col);
         ShapeMotor shapeMotor = col.GetComponent<ShapeMotor>();
         IShapeBehaviour shapeBehaviour = col.GetComponent<IShapeBehaviour>();
         IProjectile projectile = col.GetComponent<IProjectile>();
@@ -63,8 +63,13 @@ public class TriangleProjectile : MonoBehaviour, IProjectile
         else if(col.CompareTag("Wall"))
             Destroy(gameObject);
     }
-
-    IShapeBehaviour GetClosestTarget(float range, LayerMask layerMask)
+    
+    void IProjectile.Die()
+    {
+        Destroy(gameObject);
+    }
+    
+    private IShapeBehaviour GetClosestTarget(float range, LayerMask layerMask)
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range, layerMask);
         List<IShapeBehaviour> shapesInRange = new List<IShapeBehaviour>();
@@ -91,5 +96,6 @@ public class TriangleProjectile : MonoBehaviour, IProjectile
 
         return closestShape;
     }
+
 
 }
